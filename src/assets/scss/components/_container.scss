@@ -1,0 +1,11 @@
+.container {
+	font-family: Helvetica, sans-serif;
+	width: 80%;
+	margin: 3rem auto;
+	display: flex;
+	flex-direction: column;
+
+	@include respond-above(lg) {
+		max-width: map-get($breakpoints, "lg");
+	}
+}
