@@ -80,7 +80,8 @@ $gray:(
 // --- Main colors
 
 $clr-main: map-get($light-blue, '400');
-$clr-text: map-get($gray, '900');
+$clr-text: map-get($gray, '600');
+$clr-titles: map-get($gray, "800");
 
 // --- viewports
 
@@ -96,3 +97,10 @@ $breakpoints: (
   header: 1024px,
   searchbar: 768px
 );
+
+
+// --- Type Colors
+
+$vuejs:  #42b883;
+$php: #8892BE;
+$js: #f0db4f;

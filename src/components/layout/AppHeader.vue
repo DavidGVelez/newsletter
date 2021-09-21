@@ -38,7 +38,7 @@ nav {
     font-size: 30px;
     font-weight: bold;
     letter-spacing: 1px;
-    color: $clr-text;
+    color: $clr-titles;
   }
 
   & .router {
