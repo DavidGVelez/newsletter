@@ -1,37 +1,35 @@
 <script>
-import { AppHeader } from "@/components/layout";
+import { AppHeader, AppFooter } from "@/components/layout";
 
 export default {
-  components: { AppHeader },
+  components: { AppHeader, AppFooter },
 };
 </script>
 
 <template>
   <div id="app">
     <AppHeader></AppHeader>
-    <router-view />
+    <main>
+      <router-view />
+    </main>
+    <AppFooter></AppFooter>
   </div>
 </template>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  font-family: "Roboto";
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
-  color: #2c3e50;
+  color: $clr-text;
+  margin: 0 !important;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+main {
+  flex-grow: 1;
+  max-width: $width-container;
+  margin: auto;
 }
 </style>

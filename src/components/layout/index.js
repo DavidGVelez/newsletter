@@ -1,3 +1,3 @@
 import AppHeader from "./AppHeader.vue";
-
-export { AppHeader };
+import AppFooter from "./AppFooter.vue";
+export { AppHeader, AppFooter };
