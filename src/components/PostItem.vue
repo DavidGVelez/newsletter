@@ -19,7 +19,7 @@ export default {
 
 <template>
   <article class="post">
-    <a class="post_content" :href="getUrl()">
+    <router-link class="post_content" :to="'/post/' + data.slug">
       <v-icon :name="data.type" scale="2" :class="color()" />
       <div class="post_info">
         <h3 class="post_title">{{ data.title }}</h3>
@@ -27,7 +27,7 @@ export default {
           <time>{{ data.created_at }}</time>
         </div>
       </div>
-    </a>
+    </router-link>
   </article>
 </template>
 
@@ -45,15 +45,21 @@ export default {
       width: 25px;
     }
 
-    &:hover svg.vuejs {
-      color: $vuejs;
+    &:hover {
+      & svg.js {
+        color: $js;
+      }
+      & svg.php {
+        color: $php;
+      }
+      & svg.vuejs {
+        color: $vuejs;
+      }
+      & .post_info {
+        color: map-get($gray, "900");
+      }
     }
-    &:hover svg.js {
-      color: $js;
-    }
-    &:hover svg.php {
-      color: $php;
-    }
+
     .post_info {
       padding: 10px;
       text-decoration: none;

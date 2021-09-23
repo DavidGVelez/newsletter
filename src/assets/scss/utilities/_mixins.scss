@@ -32,3 +32,32 @@
 		@warn 'Invalid breakpoint: #{$breakpoint}.';
 	}
 }
+@mixin respond-below-height($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-height: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+@mixin supports-hover($child: '') {
+  @media (any-hover: 'hover') {
+    &:hover #{$child} {
+      @content;
+    }
+  }
+}
+@mixin box-shadow($dp: 1) {
+  box-shadow: map-get($umbra-map, $dp) rgba(0, 0, 0, $umbra-opacity),
+    map-get($penumbra-map, $dp) rgba(0, 0, 0, $penumbra-opacity),
+    map-get($ambient-map, $dp) rgba(0, 0, 0, $ambient-opacity);
+}

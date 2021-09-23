@@ -1,0 +1,42 @@
+// -----------------------------------------------------------------------
+// Box shadow partials
+// -----------------------------------------------------------------------
+
+$umbra-opacity: 0.08 !default;
+$penumbra-opacity: 0.05 !default;
+$ambient-opacity: 0.04 !default;
+
+$umbra-map: (
+  1: 0px 3px 3px -2px,
+  2: 0px 4px 5px -2px,
+  3: 0px 6px 7px -4px,
+  4: 0px 8px 9px -5px,
+  5: 0px 9px 12px -6px,
+  6: 0px 11px 14px -7px,
+) !default;
+
+$penumbra-map: (
+  1: 0px 3px 4px 0px,
+  2: 0px 7px 10px 1px,
+  3: 0px 11px 15px 1px,
+  4: 0px 15px 22px 2px,
+  5: 0px 19px 29px 2px,
+  6: 0px 23px 36px 3px,
+) !default;
+
+$ambient-map: (
+  1: 0px 1px 8px 0px,
+  2: 0px 2px 16px 1px,
+  3: 0px 4px 20px 3px,
+  4: 0px 6px 28px 5px,
+  5: 0px 7px 36px 6px,
+  6: 0px 9px 44px 8px,
+) !default;
+
+// @for $i from 0 through 24 {
+//   .box-shadow-#{$i} {
+//     box-shadow: map-get($umbra-map, $i) rgba(0, 0, 0, $umbra-opacity),
+//     map-get($penumbra-map, $i) rgba(0, 0, 0, $penumbra-opacity),
+//     map-get($ambient-map, $i) rgba(0, 0, 0, $ambient-opacity);
+//   }
+// }

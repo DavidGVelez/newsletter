@@ -11,7 +11,15 @@ export default {
 </script>
 
 <template>
-  <div class="home">
+  <main>
     <PostList></PostList>
-  </div>
+  </main>
 </template>
+
+<style lang="scss">
+main {
+  width: 90%;
+  margin-top: $main-height;
+  margin-bottom: $main-height;
+}
+</style>

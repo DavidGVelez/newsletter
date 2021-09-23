@@ -9,9 +9,7 @@ export default {
 <template>
   <div id="app">
     <AppHeader></AppHeader>
-    <main>
-      <router-view />
-    </main>
+    <router-view />
     <AppFooter></AppFooter>
   </div>
 </template>
