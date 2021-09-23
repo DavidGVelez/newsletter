@@ -16,10 +16,4 @@ export default {
   </main>
 </template>
 
-<style lang="scss">
-main {
-  width: 90%;
-  margin-top: $main-height;
-  margin-bottom: $main-height;
-}
-</style>
+<style lang="scss"></style>

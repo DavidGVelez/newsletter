@@ -9,15 +9,6 @@ export default {
       menuIsOpen: false,
     };
   },
-
-  computed: {
-    getCurrentLocale() {
-      return this.locales.find(
-        (element) => element.locale == this.$i18n.locale
-      );
-    },
-  },
-
   methods: {
     checkIfMobileWidth() {
       this.isMobile = window.innerWidth < 1100;
@@ -28,6 +19,7 @@ export default {
       setTimeout(() => document.body.classList.add("header-is-open"), 10);
     },
     closeMenu() {
+      console.log("close");
       this.menuIsOpen = false;
       document.body.classList.remove("header-is-open");
       setTimeout(() => (this.menuIsHidden = true), 200);
@@ -47,7 +39,7 @@ export default {
 <template>
   <header id="app_header">
     <nav class="container nav" role="navigation">
-      <router-link to="/">
+      <router-link class="logo" to="/">
         <h1 class="title">Newsletter</h1>
       </router-link>
       <div id="header_navigation" @keydown.esc="closeMenu">
@@ -81,19 +73,14 @@ export default {
           <div class="header-navigation-inner">
             <ul>
               <li class="menu-item">
-                <router-link to="test">test</router-link>
+                <router-link @click.native="closeMenu" to="/posts"
+                  >Posts</router-link
+                >
               </li>
               <li class="menu-item">
-                <router-link to="test1">test</router-link>
-              </li>
-              <li class="menu-item">
-                <router-link to="test2">test</router-link>
-              </li>
-              <li class="menu-item">
-                <router-link to="test3">test</router-link>
-              </li>
-              <li class="menu-item">
-                <router-link to="test4">test</router-link>
+                <router-link @click.native="closeMenu" to="/contact-us"
+                  >Contact</router-link
+                >
               </li>
             </ul>
           </div>
@@ -140,8 +127,10 @@ header {
   @include respond-below(header) {
     width: 100%;
   }
-  @include respond-below(md) {
-    width: 90%;
+  @include respond-below(lg) {
+    & .logo {
+      margin-left: 20px;
+    }
   }
 }
 
@@ -233,7 +222,7 @@ a {
     right: -100%;
     height: 100vh;
     width: 100vw;
-    max-width: 414px;
+    max-width: 425px;
     background-color: map-get($gray, "600");
     z-index: 1000000000;
     pointer-events: none;
@@ -349,8 +338,9 @@ a {
 
   &.active {
     @include respond-below(header) {
-      opacity: 1;
+      opacity: 0.8;
       pointer-events: all;
+      background-color: map-get($gray, "100");
     }
   }
 }
