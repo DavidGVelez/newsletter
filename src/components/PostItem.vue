@@ -11,7 +11,9 @@ export default {
       return "/post/" + this.data.slug;
     },
     color() {
-      return this.data.type.split("brands/")[1];
+      return (
+        this.data.type.split("brands/")[1] ?? this.data.type.split("brands/")[0]
+      );
     },
   },
 };
@@ -54,6 +56,9 @@ export default {
       }
       & svg.vuejs {
         color: $vuejs;
+      }
+      & svg.briefcase {
+        color: $briefcase;
       }
       & .post_info {
         color: map-get($gray, "900");

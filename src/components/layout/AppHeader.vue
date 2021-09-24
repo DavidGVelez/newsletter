@@ -19,7 +19,6 @@ export default {
       setTimeout(() => document.body.classList.add("header-is-open"), 10);
     },
     closeMenu() {
-      console.log("close");
       this.menuIsOpen = false;
       document.body.classList.remove("header-is-open");
       setTimeout(() => (this.menuIsHidden = true), 200);
