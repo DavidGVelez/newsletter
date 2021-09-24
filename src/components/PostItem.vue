@@ -21,7 +21,7 @@ export default {
 
 <template>
   <article class="post">
-    <router-link class="post_content" :to="'/post/' + data.slug">
+    <router-link data="test" class="post_content" :to="'/post/' + data.slug">
       <v-icon :name="data.type" scale="2" :class="color()" />
       <div class="post_info">
         <h3 class="post_title">{{ data.title }}</h3>

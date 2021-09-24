@@ -19,3 +19,5 @@ new Vue({
     "v-icon": Icon,
   },
 }).$mount("#app");
+
+store.dispatch("posts/getPosts");

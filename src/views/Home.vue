@@ -8,27 +8,12 @@ export default {
   },
   data() {
     return {
+      postList: {},
       postsLoading: false,
     };
   },
-
-  methods: {
-    async fetchPosts() {
-      try {
-        await this.$store.dispatch("posts/getPosts");
-      } catch (e) {
-        return;
-      }
-    },
-  },
-  computed: {
-    postsLists() {
-      return this.$store.state.posts.posts;
-    },
-  },
   mounted() {
     this.postsLoading = !this.postsLoading;
-    this.fetchPosts();
     this.postsLoading = !this.postsLoading;
   },
 };
@@ -37,7 +22,7 @@ export default {
 <template>
   <main>
     <h2 v-if="this.postsLoading">Loading</h2>
-    <PostList :posts="postsLists" v-else></PostList>
+    <PostList :posts="this.$store.state.posts.posts" v-else></PostList>
   </main>
 </template>
 
