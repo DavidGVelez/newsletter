@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Post from "../views/Post.vue";
+import AddPost from "../views/AddPost.vue";
 import Contact from "../views/Contact.vue";
 
 Vue.use(VueRouter);
@@ -25,6 +26,11 @@ const routes = [
     path: "/post/:slug",
     name: "Post",
     component: Post,
+  },
+  {
+    path: "/add-post",
+    name: "Add Post",
+    component: AddPost,
   },
   {
     path: "/contact-us",

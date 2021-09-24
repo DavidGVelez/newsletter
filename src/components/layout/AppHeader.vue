@@ -77,6 +77,11 @@ export default {
                 >
               </li>
               <li class="menu-item">
+                <router-link @click.native="closeMenu" to="/add-post"
+                  >Add post</router-link
+                >
+              </li>
+              <li class="menu-item">
                 <router-link @click.native="closeMenu" to="/contact-us"
                   >Contact</router-link
                 >
